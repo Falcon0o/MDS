@@ -28,21 +28,9 @@ CoordSys CoordSys::TransG2L(const CoordSys& c) const {
     return CoordSys(TransG2L_Pnt(c.Location()), Orientation().conjugate() * c.Orientation()); 
 }
 
-
-// Coord7 Coord7::TransL2G(const Coord7& c) const {
-//    
-// }
-
-// Coord7 Coord7::TransG2L(const Coord7& c) const {
-//     
-// }
-
 template <>
 CoordSys Random() {
     return CoordSys(Random<Vector3>(), Random<Quaternion>());
 }
-
-
-    
 
 } // namespace msd

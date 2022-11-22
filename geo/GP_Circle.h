@@ -7,10 +7,12 @@ class GP_Circle : public GP_2d {
 public:
     Scalar m_radius;
 public:
-    GP_Circle(const Scalar radius, const Coord7& c) : GP_2d(c) {}
+    GP_Circle(const Scalar radius, const CoordSys& c) : GP_2d(c), m_radius(radius) {}
     virtual ~GP_Circle() {}
 
-    Scalar Distance(const GP_Circle& other) const;
+    Scalar ClosestPoints(const GP_Circle& other, Vector3& clstPntI, Vector3& clstPntJ) const;
+
+    static void Test();
 };
 
 

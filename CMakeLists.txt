@@ -12,11 +12,12 @@ add_executable(MDSolver main.cpp
 ./spline/SplAkima.cpp
 ./spline/SplLagrange3.cpp
 
-./math/Quaternion.cpp
+
 ./math/CoordSys.cpp
 
 # ./geo/Mesh.cpp
-# ./geo/GP_Circle.cpp
+./geo/GP_Circle.cpp
+./geo/GP_Torus.cpp
 )
 
 target_include_directories(MDSolver PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")

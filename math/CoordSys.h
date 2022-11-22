@@ -19,6 +19,7 @@ public:
         Orientation() = rot;
     }
 
+    CoordSys(const CoordSys& other) : CoordSys(other.m_location, other.m_orientation) {}
     const Vector3& Location() const { return m_location; }
     Vector3& Location() { return m_location; }
 
@@ -45,18 +46,4 @@ void Print(const CoordSys& c, OutStream& stream) {
     Print(c.Orientation(), stream);
 }
 
-// class Coord7 : public Matrix<7, 1>
-// { 
-// public:
-
-//     Coord7(const Coord7& other) : Matrix<7, 1>(other) {}
-//     
-
-
-//     Vector3 TransG2L_Dir(const Vector3&) const;
-
-//     static Coord7 Rand() {
-//         return Coord7(Vector3::Rand(), Quaternion::Rand());
-//     }
-// };
 } // end namespace msd

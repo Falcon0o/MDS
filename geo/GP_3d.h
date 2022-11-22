@@ -1,10 +1,14 @@
 #pragma once
 
-#include "math/Quaternion.h"
-#include "math/Vector3.h"
+#include "geo/GP_Base.h"
 
 namespace msd {
-class Geo3d { 
+class GP_3d : public GP_Base { 
+public:
+    GP_3d(const CoordSys& c) : GP_Base(c) {}
+    virtual ~GP_3d() {}
+
+    virtual uint32_t Dim() const final override { return 3; }
 
 };
 

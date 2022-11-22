@@ -1,14 +1,14 @@
 #pragma once
 
-#include "math/Coord7.h"
+#include "math/CoordSys.h"
 
 namespace msd {
 class GP_Base
 { 
-private:
-    Coord7 m_coord;
 protected:
-    GP_Base(const Coord7& c) : m_coord(c) {}
+    CoordSys m_frame;
+protected:
+    GP_Base(const CoordSys& c) : m_frame(c) {}
     virtual ~GP_Base() {}
     virtual uint32_t Dim() const = 0;
 };

@@ -3,6 +3,7 @@
 #include <stdint.h>
 #include <cmath>
 
+
 namespace msd {
 
 #define USE_DOUBLE_PRECISION
@@ -79,7 +80,17 @@ inline Scalar Degree2Radian(const Scalar& d) {
     return d * tmp;
 }
 
-inline Scalar Rand() {
+template <typename T>
+T Random();
+
+template <>
+inline Scalar Random() {
     return static_cast<Scalar>(rand()) / RAND_MAX;
 }
+
+inline Scalar Random(const Scalar &ma) {
+    return Random<Scalar>() * ma;
+}
+
+
 } // end namespace msd
